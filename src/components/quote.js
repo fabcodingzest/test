@@ -13,6 +13,7 @@ const Quote = ({ quotes }) => {
         const random = generateRandomNumber();
         setRandomNumber(random)
     }
+
     return (
         <>
             <div className="container">
