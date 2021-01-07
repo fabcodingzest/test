@@ -57,9 +57,9 @@ body {
   margin: 15px;
 }
 
-.menu {
+.navbarContainer {
   position: absolute;
-  top: 30px;
+  top: 44px;
   right: 30px;
 }
 
