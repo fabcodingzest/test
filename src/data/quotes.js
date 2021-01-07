@@ -46,7 +46,7 @@ const quotes = [
     {
         quote:
             'I can’t give you a sure-fire formula for success, but I can give you a formula for failure: try to please everybody all the time',
-        author: 'Herbert Bayard Swope',
+        author: '- Herbert Bayard Swope',
     },
     {
         quote:
@@ -56,7 +56,7 @@ const quotes = [
     {
         quote:
             'It had long since come to my attention that people of accomplishment rarely sat back and let things happen to them. They went out and happened to things',
-        author: 'Leornado Da Vinci',
+        author: '- Leornado Da Vinci',
     },
     {
         quote:
