@@ -1,0 +1,58 @@
+:root {
+  --main-font: 'Arial';
+}
+
+.container {
+  background: rgb(241, 241, 241);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.main-quote-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.quote-container {
+  width: 60%;
+}
+
+.quote {
+  font-family: var(--main-font);
+  font-weight: 300;
+  text-align: center;
+}
+
+.author {
+  font-family: var(--main-font);
+  font-weight: 100;
+  text-align: center;
+  padding-top: 15px;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: center;
+}
+
+.buttons {
+  display: flex;
+  padding: 10px;
+  justify-content: space-evenly;
+}
+
+.share,
+.heart,
+.forward,
+.mode,
+.menu {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background: none;
+  margin: 15px;
+}
