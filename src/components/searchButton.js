@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import quotes from '../data/quotes';
+import Dropdown from './dropDown';
+import DropdownButton from './dropDownButton';
 
 const Test = () => {
   const [catalogue, setCatalogue] = useState(false);
@@ -29,7 +31,10 @@ const Test = () => {
 
   const filteredAuthors = filterAuthors();
 
-  const handleClick = () => {
+  const handleClick = (event) => {
+    const authorName = event.target.getAttribute('value');
+    const authorsQuotes = quotes.filter((quote) => quote.author === authorName);
+    console.log(authorsQuotes);
     setCatalogue(false);
   };
 
@@ -47,23 +52,16 @@ const Test = () => {
         {filteredAuthors.length < 11 ? (
           filteredAuthors.map((author, index) => {
             return (
-              <button className="author-button" key={index}>
-                {author}
-              </button>
+              <DropdownButton
+                author={author}
+                index={index}
+                clickHandler={handleClick}
+              />
             );
           })
         ) : (
           <>
-            <button className="author-button">{filteredAuthors[0]}</button>
-            <button className="author-button">{filteredAuthors[1]}</button>
-            <button className="author-button">{filteredAuthors[2]}</button>
-            <button className="author-button">{filteredAuthors[3]}</button>
-            <button className="author-button">{filteredAuthors[4]}</button>
-            <button className="author-button">{filteredAuthors[5]}</button>
-            <button className="author-button">{filteredAuthors[6]}</button>
-            <button className="author-button">{filteredAuthors[7]}</button>
-            <button className="author-button">{filteredAuthors[8]}</button>
-            <button className="author-button">{filteredAuthors[9]}</button>
+            <Dropdown filtered={filteredAuthors} clickHandler={handleClick} />
           </>
         )}
       </div>
