@@ -13,12 +13,6 @@ const SidebarData = [
         cName: 'nav-text'
     },
     {
-        title: 'Search',
-        path: '/search',
-        icon: <BsIcons.BsSearch />,
-        cName: 'nav-text'
-    },
-    {
         title: 'Favorites',
         path: '/favorites',
         icon: <BsIcons.BsHeartFill />,
