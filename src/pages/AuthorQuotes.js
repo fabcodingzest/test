@@ -1,18 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import Quote from '../components/Quote';
+import Quote from '../components/AuthorQuote';
 import './AuthorQuotes.css';
 
 const Catalogue = (props) => {
     const [authorQuotes, setAuthorQuotes] = useState([]);
 
-    const generateAuthorName = () => {
-        const authorSlug = props.match.params.authorName.split('-');
-
-        return authorSlug
-            .map((name) => name[0].toUpperCase() + name.substr(1))
-            .join(' ');
-    };
+    const generateAuthorName = () => props.match.params.authorName.split('-')
+        .map((name) => name[0].toUpperCase() + name.substr(1))
+        .join(' ');
 
     const author = generateAuthorName();
 
@@ -22,9 +18,8 @@ const Catalogue = (props) => {
             .then((response) => {
                 setAuthorQuotes(response.data);
             });
-    }, []);
+    }, [author]);
 
-    console.log(authorQuotes);
     return (
         <>
             <div className="author-catalogue">
