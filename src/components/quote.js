@@ -1,16 +1,30 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+import * as GoIcons from 'react-icons/go';
+import * as CgIcons from 'react-icons/cg';
+import * as MdIcons from 'react-icons/md';
 
-const Quote = ({ quoteText }) => {
-    return (
-        <>
-            <div className="quotes">
-                <div className="cat-quote-bar"></div>
-                <div className="quote-text">
-                    {quoteText}
-                </div>
+
+const Quote = ({ quoteText, quoteAuthor, quoteGenre, quoteSlug }) => (
+    <div className="quote-container">
+        <div className="quote">
+            <div className="quote-bar"></div>
+            <div className="quote-text">
+                <GoIcons.GoQuote size="30" />
+                <h1 className="text">{quoteText}</h1>
+                <Link to={"/author/" + quoteSlug} className="author-link">
+                    <div className="author-info">
+                        <h4 className="author">{quoteAuthor}</h4>
+                        <h4 className="genre">{quoteGenre}</h4>
+                        <div className="touch-icon">
+                            <CgIcons.CgArrowLongRight size="25" className="right-arrow" />
+                            <MdIcons.MdTouchApp size="28" className="point-icon" />
+                        </div>
+                    </div>
+                </Link>
             </div>
-        </>
-    )
-}
+        </div>
+    </div>
+)
 
 export default Quote
