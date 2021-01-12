@@ -9,6 +9,11 @@
   display: flex;
 }
 
+.container .active {
+  /* background: #000; */
+  color: #fff;
+}
+
 .quote-container {
   /* background: navy; */
   width: 90vw;

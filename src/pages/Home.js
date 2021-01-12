@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import QuoteText from '../components/Quote'
+import QuoteText from '../components/QuoteText'
 import Features from '../components/Features'
 import './Home.css'
 
@@ -46,7 +46,7 @@ const Quote = () => {
                 quoteText={fullQuote.text}
                 quoteAuthor={fullQuote.author}
                 quoteGenre={fullQuote.genre}
-                quoteSluge={fullQuote.slug}
+                quoteSlug={fullQuote.slug}
             />
             <Features quoteHandler={nextQuote} />
         </div>
