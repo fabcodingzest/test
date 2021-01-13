@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { BrowserRouter as Router, Link } from 'react-router-dom'
 import * as GoIcons from 'react-icons/go';
 import * as CgIcons from 'react-icons/cg';
 import * as MdIcons from 'react-icons/md';

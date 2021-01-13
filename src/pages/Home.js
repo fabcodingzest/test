@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import QuoteText from '../components/QuoteText';
-import { TwitterShareButton, TwitterIcon } from 'react-share';
+import { TwitterShareButton } from 'react-share';
 // import Features from '../components/Features'
 import * as BsIcons from 'react-icons/bs';
 import * as SiIcons from 'react-icons/si';
