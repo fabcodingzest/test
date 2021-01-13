@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Quote from '../components/AuthorQuote';
-import './AuthorQuotes.css';
+import '../components/AuthorQuotes.css';
 
 const Catalogue = (props) => {
     const [authorQuotes, setAuthorQuotes] = useState([]);
