@@ -5,10 +5,14 @@ import * as CgIcons from 'react-icons/cg';
 
 const Features = ({ quoteHandler }) => {
 
+    const [isDark, setIsDark] = useState(false)
+
+    const handleClick = () => (setIsDark(!isDark))
+
     return (
 
         < div className="feature-container " >
-            <div className="modes">
+            <div className="modes" onClick={handleClick}>
                 <BsIcons.BsSun className="darkmode" size="30" />
             </div>
             <div className="share-twitter">
