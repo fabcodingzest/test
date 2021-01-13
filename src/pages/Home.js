@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import QuoteText from '../components/QuoteText'
-import Features from '../components/Features'
+// import Features from '../components/Features'
+import * as BsIcons from 'react-icons/bs';
+import * as SiIcons from 'react-icons/si';
+import * as CgIcons from 'react-icons/cg';
 import './Home.css'
 
 const Quote = () => {
-
+    const [isDark, setIsDark] = useState(false)
     const [randomQuote, setRandomQuote] = useState({
         data: [
             {
@@ -39,16 +42,33 @@ const Quote = () => {
         slug: generateAuthorSlug(randomQuote.data[0].quoteAuthor)
     };
 
-    return (
+    const handleClick = () => (setIsDark(!isDark))
 
-        <div className="container">
+    const Features = () => (
+        < div className="feature-container " >
+            <div className="modes" onClick={handleClick}>
+                <BsIcons.BsSun className="darkmode" size="30" />
+            </div>
+            <div className="share-twitter">
+                <SiIcons.SiTwitter className="twitter-icon" size="32" />
+            </div>
+            <div className="next-quote" onClick={nextQuote}>
+                <button className="next" >Next Quote</button>
+                <CgIcons.CgArrowLongRight size="25" className="next-icon" />
+            </div>
+        </div > 
+    )
+
+
+    return (
+        <div className={isDark ? 'Dark-Mode' : 'Light-Mode'}>
             <QuoteText
                 quoteText={fullQuote.text}
                 quoteAuthor={fullQuote.author}
                 quoteGenre={fullQuote.genre}
                 quoteSlug={fullQuote.slug}
             />
-            <Features quoteHandler={nextQuote} />
+            <Features />
         </div>
     )
 }

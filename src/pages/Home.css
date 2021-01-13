@@ -1,21 +1,58 @@
 :root {
   --main-font: 'Arial';
+  --main-light-color: #e9ecef;
+  --main-dark-color: #11151c;
 }
 
-.container {
-  background: rgb(236, 236, 236);
+.Light-Mode {
+  background: var(--main-light-color);
   width: 100vw;
   height: 100vh;
   display: flex;
 }
 
-.container .active {
-  /* background: #000; */
-  color: #fff;
+.Dark-Mode {
+  background: var(--main-dark-color);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  color: var(--main-light-color);
+}
+
+.Dark-Mode .author,
+.Dark-Mode .genre,
+.Dark-Mode .touch-icon,
+.Dark-Mode .next {
+  color: var(--main-light-color);
+}
+
+.Dark-Mode .next-quote:hover {
+  background: var(--main-light-color);
+  transition: 100ms;
+  color: var(--main-dark-color);
+}
+
+.Dark-Mode .next-quote:hover .next {
+  color: var(--main-dark-color);
+}
+
+.Dark-Mode .author-info:hover {
+  background: var(--main-light-color);
+  transition: 500ms;
+}
+
+.Dark-Mode .author-info:hover .right-arrow {
+  visibility: visible;
+  transition: 500ms;
+  color: var(--main-dark-color);
+}
+
+.Dark-Mode .author-info:hover .author,
+.Dark-Mode .author-info:hover .genre {
+  color: var(--main-dark-color);
 }
 
 .quote-container {
-  /* background: navy; */
   width: 90vw;
   display: flex;
   justify-content: center;
@@ -23,7 +60,6 @@
 }
 
 .quote {
-  /* background: white; */
   height: 45vh;
   width: 100%;
   margin: 10px;
@@ -41,38 +77,39 @@
 }
 
 .text {
-  /* background: orange; */
   width: 40vw;
   padding: 20px;
   font-family: var(--main-font);
-  font-size: 2rem;
+  font-size: 1.7rem;
   font-weight: 500;
 }
 
 .author {
+  outline: none;
   font-family: var(--main-font);
   font-size: 1.5rem;
   font-weight: 400;
 }
 
 .genre {
+  outline: none;
   font-family: var(--main-font);
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: 200;
   margin-top: 10px;
 }
 
 .author-info {
-  /* background: purple; */
   width: 50%;
   padding: 20px;
   cursor: pointer;
 }
 
 .author-link {
+  outline: none;
   text-decoration: none;
   list-style: none;
-  color: #000;
+  color: var(--main-dark-color);
 }
 .touch-icon {
   display: flex;
@@ -90,21 +127,20 @@
 .author-info:hover .right-arrow {
   visibility: visible;
   transition: 500ms;
-  color: white;
+  color: var(--main-light-color);
 }
 
 .author-info:hover .author,
 .author-info:hover .genre {
-  color: white;
+  color: var(--main-light-color);
 }
 
 .author-info:hover {
-  background: rgb(20, 20, 20);
+  background: var(--main-dark-color);
   transition: 500ms;
 }
 
 .feature-container {
-  /* background: firebrick; */
   width: 25vw;
   display: flex;
   flex-direction: column;
@@ -112,29 +148,11 @@
 }
 
 .modes {
-  /* background: yellow; */
   display: absolute;
   top: 0;
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
-}
-
-.darkmode {
-  cursor: pointer;
-}
-
-.favorites {
-  /* background: firebrick; */
-  width: 40%;
-  padding: 10px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-}
-
-.favorite {
-  cursor: pointer;
 }
 
 .share-twitter {
@@ -144,18 +162,16 @@
 }
 
 .next-quote {
-  /* background: rgb(0, 132, 255); */
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   width: 50%;
   padding: 10px;
   margin-bottom: 200px;
-  border: 1px solid black;
+  border: 1px solid var(--main-dark-color);
   cursor: pointer;
 }
-.next,
-.favorite {
+.next {
   font-family: var(--main-font);
   font-size: 16px;
   margin: 10px;
@@ -164,24 +180,23 @@
   outline: none;
 }
 
-.favorites:hover,
 .next-quote:hover {
-  background: rgb(20, 20, 20);
+  background: var(--main-dark-color);
   transition: 100ms;
-  color: white;
+  color: var(--main-light-color);
 }
 
-.favorites:hover .favorite,
 .next-quote:hover .next {
-  color: white;
+  color: var(--main-light-color);
 }
 
 .darkmode {
   margin: 30px;
 }
 
-@media (max-width: 480px) {
-  .container {
+@media (max-width: 768px) {
+  .Light-Mode,
+  .Dark-Mode {
     flex-direction: column;
   }
   .quote-container {
@@ -195,25 +210,36 @@
 
   .quote-bar {
     width: 5px;
-    height: 70%;
+    margin-left: 10px;
+    height: 60%;
   }
 
   .text {
     width: 85vw;
     padding: 15px;
     font-family: var(--main-font);
-    font-size: 1.75rem;
+    font-size: 3.6vw;
     font-weight: 500;
   }
+
+  .author-info:hover {
+    background: var(--main-dark-color);
+    transition: 0ms;
+  }
+
+  .author-info:hover .right-arrow {
+    transition: 0ms;
+  }
+
   .author {
     font-family: var(--main-font);
-    font-size: 1.5rem;
+    font-size: 4vw;
     font-weight: 400;
   }
 
   .genre {
     font-family: var(--main-font);
-    font-size: 1.2rem;
+    font-size: 3.4vw;
     font-weight: 200;
     margin-top: 10px;
   }
@@ -239,9 +265,6 @@
     align-items: center;
   }
 
-  .favorites {
-    width: 55%;
-  }
   .share-twitter {
     height: 100%;
     margin: 0;
@@ -263,5 +286,23 @@
 
   .next {
     margin: 10px;
+    font-size: 2.6vw;
+  }
+}
+
+@media (max-width: 480px) {
+  .text {
+    font-size: 4.8vw;
+  }
+  .author {
+    font-size: 5.5vw;
+  }
+
+  .genre {
+    font-size: 4.8vw;
+  }
+
+  .next {
+    font-size: 3.5vw;
   }
 }
