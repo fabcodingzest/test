@@ -23,11 +23,11 @@ const Catalogue = (props) => {
     return (
         <>
             <div className="author-catalogue">
-                <div className="back-to-home">
-                    <Link to="/">
+                <Link to="/">
+                    <div className="back-to-home">
                         <button className="back">Back</button>
-                    </Link>
-                </div>
+                    </div>
+                </Link>
                 <div className="author-quotes">
                     <h1 className="author-name">{author}</h1>
                     {authorQuotes.map((quote, index) => (

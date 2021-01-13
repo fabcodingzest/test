@@ -192,6 +192,7 @@
 
 .darkmode {
   margin: 30px;
+  cursor: pointer;
 }
 
 @media (max-width: 768px) {
@@ -287,6 +288,7 @@
   .next {
     margin: 10px;
     font-size: 2.6vw;
+    cursor: pointer;
   }
 }
 

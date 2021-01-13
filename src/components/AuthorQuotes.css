@@ -29,6 +29,16 @@
   cursor: pointer;
 }
 
+.back-to-home:hover {
+  background: #11151c;
+  transition: 100ms;
+  color: #e9ecef;
+}
+
+.back-to-home:hover .back {
+  color: #e9ecef;
+}
+
 .author-quotes {
   display: flex;
   flex-direction: column;
@@ -47,7 +57,7 @@
   margin: 3px;
   display: flex;
   align-items: center;
-  width: 90%;
+  width: 40%;
   min-height: 250px;
   padding: 20px;
 }
@@ -64,16 +74,15 @@
   font-family: 'Arial';
   font-weight: 300;
   font-size: 1.3rem;
+  text-align: left;
 }
 
 @media (max-width: 768px) {
   .author-catalogue {
-    /* background: firebrick; */
     width: 100vw;
   }
 
   .author-quotes {
-    /* background: firebrick; */
     width: 100vw;
     align-items: flex-start;
   }
